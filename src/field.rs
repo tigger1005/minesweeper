@@ -2,7 +2,7 @@ mod place;
 
 use place::*;
 use itertools::Itertools;
-use rand::Rng;
+use rand::random;
 
 use super::{N, SCALE, BOMBS_NUMBER};
 
@@ -34,8 +34,8 @@ impl Field {
 
     fn place_bombs(& mut self) {
         for _i in 0..BOMBS_NUMBER {
-            let x:usize = rand::thread_rng().gen_range(0..N);
-            let y:usize = rand::thread_rng().gen_range(0..N);
+            let x:usize = random::<usize>() % N;
+            let y:usize = random::<usize>() % N;
             
             if !self.field[x][y].is_bomb() {
                 self.build_numbers(x, y); 

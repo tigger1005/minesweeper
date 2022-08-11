@@ -1,7 +1,7 @@
 mod field;
 
 use field::*;
-use nannou::{prelude::*, winit::event::ButtonId};
+use nannou::prelude::*;
 
 const N: usize = 20;
 const SCALE : f32 = 30.0;
